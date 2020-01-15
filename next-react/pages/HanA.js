@@ -1,11 +1,12 @@
 import Link from 'next/link'
-function HanA() {
+import {withRouter} from 'next/router'
+function HanA({router}) {
   return (
     <div>
-      <div>笔下魔王A</div>
+      <div>{router.query.name}</div>
       <Link href="/"><a>回首页</a></Link>
     </div>
   );
 }
 
-export default HanA;
+export default withRouter(HanA);
